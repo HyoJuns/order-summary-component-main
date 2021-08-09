@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root
+{
+    --primary--paleblue : hsl(225, 100%, 94%);
+    --primary--brightblue : hsl(245, 75%, 52%);
+    --neutral--paleblue : hsl(225, 100%, 98%);
+    --neutral--desaturatedblue : hsl(224, 23%, 55%);
+    --neutral--darkblue : hsl(223, 47%, 23%);
+}
+
+/* Common Style */
+
+*,
+*::before,
+*::after
+{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.6rem;
+
+    background-color: var(--primary--paleblue);
+
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img
+{
+    vertical-align: middle;
+    width : inherit;
+    height: inherit;
+}
+
+li
+{
+    list-style-type: none;
+}
+
+a
+{
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button
+{
+    all : unset;
+
+    cursor: pointer;
+}
+
+
+/* style */
+.background
+{
+    position: absolute;
+    top : 0;
+    width: 100vw;
+
+    z-index: -1;
+}
+
+.background > img
+{
+    width : 100%;
+}
+
+
+.card__container
+{
+    width : 600px;
+    height: 800px;
+    /* outline: 1px solid salmon; */
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background-color: var(--neutral--paleblue);
+    text-align: center;
+}
+
+.card__image
+{
+    width : 100%;
+    height: 250px;
+
+    transition: height .2s ease;
+}
+
+.card__title
+{
+    display: inline-block;
+    font-weight: 900;
+    font-size: 2em;
+    color : var(--neutral--darkblue);
+
+    width: 60%;
+    margin-top: 1em;
+}
+.card__description
+{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1em;
+    color : var(--neutral--desaturatedblue);
+
+    margin-top: 2em;
+    width: 60%;
+}
+
+.card__changeBox
+{
+    display: inline-block;
+    overflow: hidden;
+
+    width: 60%;
+    padding : 2em;
+    margin : 0 auto;
+    margin-top : 2em;
+    background-color: hsla(225, 100%, 94%,.2);
+    height: calc(72px + 2em);
+    border-radius: 25px;
+}
+.card__iconMusic
+{
+    width : 15%;
+    float: left;
+    height: 100%;
+}
+.card__musicName
+{
+    width: 60%;
+    float: left;
+    height: 100%;
+
+    text-align: left;
+
+    padding-left: 8px;
+
+    font-weight: 700;
+    color : var(--neutral--darkblue);
+    line-height: 1.5;
+}
+.card__price
+{
+    font-weight: 400;
+    color:var(--neutral--desaturatedblue);
+}
+
+.card__change
+{
+    float : left;
+    width : 20%;
+    height: 100%;
+
+    text-decoration: underline;
+    color : var(--primary--brightblue);
+
+    transition: color .5s ease-in;
+}
+.card__change:hover
+{
+    color : hsla(245, 75%, 52%,.5);
+    text-decoration: none;
+}
+.card__buttonlist
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2em;
+}
+
+.order__paymoney
+{
+    width: 60%;
+    height: 5rem;
+    background-color: var(--primary--brightblue);
+
+    border-radius: 10px;
+    color : var(--neutral--paleblue);
+    transition: background-color .5s ease-in;
+}
+.order__paymoney:hover
+{
+    background-color : hsla(245, 75%, 52%,.5);
+}
+.order__cancel
+{
+    width: 60%;
+    height: 5rem;
+    
+    margin-top: 2em;
+    /* border-radius: 10px; */
+    color : var(--neutral--darkblue);
+    font-weight: 400;
+}
+.order__cancel:hover
+{
+    font-weight: 700;
+}
+@media screen and (max-width : 500px)
+{
+    .card__container
+    {
+        width : 90vw;
+        min-width: 320px;
+        height: 700px;
+    }
+
+    .card__image
+    {
+        width : 100%;
+        height: 200px;
+    }
+
+    .card__title
+    {
+        font-size: 1.5em;
+    }
+
+    .card__description
+    {
+        font-size: 1em;
+        width: 80%;
+    }
+
+    .card__changeBox
+    {
+        width: 80%;
+    }
+
+    .card__iconMusic
+    {
+        width : 20%;
+        float: left;
+        height: 100%;
+    }
+}
